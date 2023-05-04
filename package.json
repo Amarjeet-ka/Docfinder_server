@@ -1,0 +1,25 @@
+{
+  "name": "docfinder_server",
+  "version": "1.0.0",
+  "description": "Server to handle request from Docfinder",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Amarjeet-ka/Docfinder_server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Amarjeet-ka/Docfinder_server/issues"
+  },
+  "homepage": "https://github.com/Amarjeet-ka/Docfinder_server#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.1.0"
+  }
+}
