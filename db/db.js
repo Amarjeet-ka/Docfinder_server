@@ -1,14 +1,23 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-mongoose.connect(process.env.REACT_APP_MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
-});
+const URL = "mongodb+srv://registration:registration@cluster0.sd2bhdx.mongodb.net/?retryWrites=true&w=majority"
 
-const db = mongoose.connection;
+const connectdatabase = () => {
+  mongoose.connect(URL, {
+    useNewUrlParser: true,
 
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
-db.once('open', function() {
-  console.log('MongoDB database connection established successfully');
-});
+    useUnifiedTopology: true,
+  })
+
+    .then((data) => {
+      console.log(
+        "\x1b[35m%s\x1b[0m",
+        `mongodb connected with server: ${data.connection.host}`
+      );
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+module.exports = connectdatabase();
